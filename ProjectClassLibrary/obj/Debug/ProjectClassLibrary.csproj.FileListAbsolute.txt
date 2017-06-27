@@ -1,0 +1,5 @@
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\ProjectClassLibrary\bin\Debug\ProjectClassLibrary.dll
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\ProjectClassLibrary\bin\Debug\ProjectClassLibrary.pdb
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.dll
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.pdb
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.csprojResolveAssemblyReference.cache
