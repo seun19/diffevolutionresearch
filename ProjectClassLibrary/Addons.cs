@@ -268,8 +268,9 @@ namespace ProjectClassLibrary
         public static void PrintVectorsToFile(Vector[] vectorPopulation)
         {
 
-            //Print the initial population of vectors to File  
-            StreamWriter sw = new StreamWriter("C:\\PythonScripts\\LiveData\\csharpdata.txt", false);
+            //Print the initial population of vectors to File
+            string fileLocation = "C:\\Users\\seuno\\Documents\\Visual Studio 2015\\Projects\\CSC899\\PythonScript\\csharpdata.txt";
+            StreamWriter sw = new StreamWriter(fileLocation, false);
             foreach (Vector vector in vectorPopulation)
             {
                 for(int i = 0; i < vector.valueAtPosition.Length; i++)
@@ -295,7 +296,8 @@ namespace ProjectClassLibrary
         {
 
             //Print the required scale to File  
-            StreamWriter sw = new StreamWriter("C:\\PythonScripts\\LiveData\\csharpscale.txt", false);          
+            string fileLocation = "C:\\Users\\seuno\\Documents\\Visual Studio 2015\\Projects\\CSC899\\PythonScript\\csharpscale.txt";
+            StreamWriter sw = new StreamWriter(fileLocation, false);          
             sw.WriteLine(upperBound);
                     
             sw.Close();
@@ -308,6 +310,37 @@ namespace ProjectClassLibrary
             foreach (double value in fitnessValue)
                 Console.WriteLine(value);
         }
+
+        public static double GetScale(Vector[] vectorPopulation)
+        {
+            double scaleValue;
+            //Set initial values
+            double minValue = vectorPopulation[0].valueAtPosition[0];
+            double maxValue = vectorPopulation[0].valueAtPosition[0];
+
+            //Get min and max value
+            foreach(Vector vector in vectorPopulation)
+            {
+                for(int i = 0; i < vector.dimension; i++)
+                {
+                    if(vector.valueAtPosition[i] < minValue)
+                    {
+                        minValue = vector.valueAtPosition[i];
+                    }//End if
+
+                    if (vector.valueAtPosition[i] > maxValue)
+                    {
+                        maxValue = vector.valueAtPosition[i];
+                    }//End if                  
+                                                         
+                }//End For
+            }// End foreach
+            minValue = Math.Abs(minValue);
+            maxValue = Math.Abs(maxValue);
+            scaleValue = Math.Max(minValue, maxValue);
+            if(scaleValue < 1) { scaleValue = 2;  }
+            return scaleValue;
+        }// End Scale method
 
     }// End Class
 

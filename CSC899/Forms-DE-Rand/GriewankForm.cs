@@ -127,8 +127,9 @@ namespace CSC899.Forms_DE_Rand
         {
             // Declare variable not to be supplied
             double bestSolutionValue;
-            int bestVectorIndex;           
-            
+            int bestVectorIndex;
+            double newScale;
+
             // Declare Variables - Arrays to keep vector population
             Vector[] popOfVectors;  //population of vectors
             Vector[] trialVectors;  //trial vectors
@@ -194,6 +195,10 @@ namespace CSC899.Forms_DE_Rand
                 //5-- Copy selected vectors into initial vector population
                 //Console.WriteLine("Generating Replaced Initial Population");
                 selectedVectors.CopyTo(popOfVectors, 0);
+                //Addon.GetScale Get new scale based on solution found
+                newScale = Addons.GetScale(popOfVectors);
+                //Addon Print scale to file
+                Addons.PrintScaleToFile(newScale);
                 //Addons.PrintVectorsToCmd(popOfVectors);
                 Addons.PrintVectorsToFile(popOfVectors);
 

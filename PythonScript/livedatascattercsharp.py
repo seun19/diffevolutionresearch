@@ -15,7 +15,7 @@ plt.ylabel("Y Axis")
 ax1 = fig.add_subplot(1,1,1)
 
 def animate(i):
-    # Scale settings
+    # Scale settings - read scale values from file
     the_scale = open('csharpscale.txt' , 'r').read()
     sc = float(the_scale)
 
