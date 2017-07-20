@@ -11,9 +11,9 @@ using System.Windows.Forms;
 using System.Threading;
 using ProjectClassLibrary;
 
-namespace CSC899.Forms_DE_Rand
+namespace CSC899.Forms_DE_Best
 {
-    public partial class RastriginForm : Form
+    public partial class GriewankForm : Form
     {
         // Declare variables to be supplied
         int iterations = 100;
@@ -23,21 +23,21 @@ namespace CSC899.Forms_DE_Rand
         double scalingFactor = 0.3;
 
         //Declare Variables lower and upper bound for rastrigin to be supplied
-        double lowerBound = -5.12;
-        double upperBound = 5.12;
+        double lowerBound = -600.0;
+        double upperBound = 600.0;
 
         //Declare Thread Variable
-        ThreadStart testRastriginRef;
-        Thread testRastriginThread;
+        ThreadStart testGriewankRef;
+        Thread testGriewankThread;
 
-        public RastriginForm()
+        public GriewankForm()
         {
             InitializeComponent();
             
         }
 
         //Events
-        private void RastriginForm_Load(object sender, EventArgs e)
+        private void GriewankForm_Load(object sender, EventArgs e)
         {
             //Non changeable Variables
             txtIterations.Text = Convert.ToString(iterations);
@@ -50,6 +50,10 @@ namespace CSC899.Forms_DE_Rand
             txtScalingFactor.Text = Convert.ToString(scalingFactor);
             txtCrossOver.Text = Convert.ToString(crossOverProbability);
         }
+        //private void AckleyForm_Load(object sender, EventArgs e)
+        //{
+            
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -59,27 +63,27 @@ namespace CSC899.Forms_DE_Rand
         private void btnStart_Click(object sender, EventArgs e)
         {
             //Start the optimization thread
-            testRastriginRef = new ThreadStart(TestRastrigin);
-            testRastriginThread = new Thread(testRastriginRef);
-            testRastriginThread.Start();
+            testGriewankRef = new ThreadStart(TestGriewank);
+            testGriewankThread = new Thread(testGriewankRef);
+            testGriewankThread.Start();
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
             //Pause the optimization thread
-            testRastriginThread.Suspend();
+            testGriewankThread.Suspend();
         }
 
         private void btnResume_Click(object sender, EventArgs e)
         {
             //Resume the optimization thread
-            testRastriginThread.Resume();
+            testGriewankThread.Resume();
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
         {
             //Abort the optimization thread
-            testRastriginThread.Abort();
+            testGriewankThread.Abort();
         }
 
         private void btnIterations_Click(object sender, EventArgs e)
@@ -119,13 +123,13 @@ namespace CSC899.Forms_DE_Rand
 
         //Method
         //Method to run as Thread
-        public void TestRastrigin()
+        public void TestGriewank()
         {
             // Declare variable not to be supplied
             double bestSolutionValue;
             int bestVectorIndex;
-            double newScale;         
-            
+            double newScale;
+
             // Declare Variables - Arrays to keep vector population
             Vector[] popOfVectors;  //population of vectors
             Vector[] trialVectors;  //trial vectors
@@ -136,7 +140,7 @@ namespace CSC899.Forms_DE_Rand
             double[] popOfVectorFitness;
             double[] crossedVectorFitness = new double[popSize];
 
-            //Addon Write Scale to file if necessary-----------------------------------
+            //Write Scale to file if necessary-----------------------------------
             Addons.PrintScaleToFile(upperBound);
 
             //  1--Initial Population Generation
@@ -148,21 +152,22 @@ namespace CSC899.Forms_DE_Rand
             Addons.PrintVectorsToCmd(popOfVectors);
 
             // 1.1-- Check fitness of population
-            popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Rastrigin");
+            popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Griewank");
             // Print fitness
             Addons.PrintFitnessToCmd(popOfVectorFitness);
 
             // Best solution found
             bestSolutionValue = popOfVectorFitness.Min();
+            bestVectorIndex = Addons.GetBestVectorIndex(popOfVectorFitness, bestSolutionValue);
             Console.WriteLine("Best Solution Found :" + bestSolutionValue);
 
             for (int i = 0; i < iterations; i++)
             {
 
-                // 2-- Mutation DE/Rand
+                // 2-- Mutation DE/Best
                 // Apply mutation by Generating Trial Vectors
                 //Console.WriteLine("Generating Trial Vectors");
-                trialVectors = Operators.Mutation(popOfVectors, scalingFactor);
+                trialVectors = Operators.Mutation(popOfVectors, bestVectorIndex, scalingFactor);
 
                 //Print the trial vectors population to cmd
                 //Addons.PrintVectorsToCmd(trialVectors);
@@ -176,7 +181,7 @@ namespace CSC899.Forms_DE_Rand
                 //Addons.PrintVectorsToCmd(crossedVectors);
 
                 // 3.1-- Check fitness of population
-                crossedVectorFitness = Addons.CalculateFitness(crossedVectors, "Rastrigin");
+                crossedVectorFitness = Addons.CalculateFitness(crossedVectors, "Griewank");
                 // Print fitness
                 //Addons.PrintFitnessToCmd(crossedVectorFitness);
 
@@ -191,7 +196,6 @@ namespace CSC899.Forms_DE_Rand
                 //5-- Copy selected vectors into initial vector population
                 //Console.WriteLine("Generating Replaced Initial Population");
                 selectedVectors.CopyTo(popOfVectors, 0);
-
                 //Addon.GetScale Get new scale based on solution found
                 newScale = Addons.GetScale(popOfVectors);
                 //Addon Print scale to file
@@ -200,7 +204,7 @@ namespace CSC899.Forms_DE_Rand
                 Addons.PrintVectorsToFile(popOfVectors);
 
                 //5.1-- Get fitness of New population of vectors(the new population)
-                popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Rastrigin");
+                popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Griewank");
 
                 //5.2-- Get Best solution found
                 bestSolutionValue = popOfVectorFitness.Min();

@@ -52,6 +52,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms-DE-Best\RosenbrockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Best\RosenbrockForm.Designer.cs">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Best\GriewankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Best\GriewankForm.Designer.cs">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Best\AckleyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Best\AckleyForm.Designer.cs">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Best\RastriginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Best\RastriginForm.Designer.cs">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms-DE-Rand\GriewankForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +108,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms-DE-Best\RosenbrockForm.resx">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Best\GriewankForm.resx">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Best\AckleyForm.resx">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Best\RastriginForm.resx">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms-DE-Rand\GriewankForm.resx">
       <DependentUpon>GriewankForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Clone Folder\" />
-    <Folder Include="Forms-DE-Best\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

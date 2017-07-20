@@ -162,7 +162,7 @@ namespace CSC899.Forms_DE_Rand
             for (int i = 0; i < iterations; i++)
             {
 
-                // 2-- Mutation
+                // 2-- Mutation DE/Rand
                 // Apply mutation by Generating Trial Vectors
                 //Console.WriteLine("Generating Trial Vectors");
                 trialVectors = Operators.Mutation(popOfVectors, scalingFactor);

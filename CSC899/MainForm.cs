@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CSC899.Forms_DE_Rand;
+using CSC899.Forms_DE_Best;
 
 namespace CSC899
 {
@@ -24,31 +25,55 @@ namespace CSC899
         {
             
         }
-
+        // DE/Rand Forms
         private void RastriginForm_Load(object sender, EventArgs e)
         {
-            RastriginForm rastriginForm = new RastriginForm();
+            Forms_DE_Rand.RastriginForm rastriginForm = new Forms_DE_Rand.RastriginForm();
             rastriginForm.Show();
         }
 
         private void AckleyForm_Load(object sender, EventArgs e)
         {
-            AckleyForm ackleyForm = new AckleyForm();
+            Forms_DE_Rand.AckleyForm ackleyForm = new Forms_DE_Rand.AckleyForm();
             ackleyForm.Show();
         }
 
         private void GriewankForm_Load(object sender, EventArgs e)
         {
-            GriewankForm griewankForm = new GriewankForm();
+            Forms_DE_Rand.GriewankForm griewankForm = new Forms_DE_Rand.GriewankForm();
             griewankForm.Show();
         }
 
         private void RosenbrockForm_Load(object sender, EventArgs e)
         {
-            RosenbrockForm rosenbrockForm = new RosenbrockForm();
+            Forms_DE_Rand.RosenbrockForm rosenbrockForm = new Forms_DE_Rand.RosenbrockForm();
             rosenbrockForm.Show();
         }
 
+        // DE/Best Forms
+        private void RastriginForm_Load_Best(object sender, EventArgs e)
+        {
+            Forms_DE_Best.RastriginForm rastriginForm = new Forms_DE_Best.RastriginForm();
+            rastriginForm.Show();
+        }
+
+        private void AckleyForm_Load_Best(object sender, EventArgs e)
+        {
+            Forms_DE_Best.AckleyForm ackleyForm = new Forms_DE_Best.AckleyForm();
+            ackleyForm.Show();
+        }
+
+        private void GriewankForm_Load_Best(object sender, EventArgs e)
+        {
+            Forms_DE_Best.GriewankForm griewankForm = new Forms_DE_Best.GriewankForm();
+            griewankForm.Show();
+        }
+
+        private void RosenbrockForm_Load_Best(object sender, EventArgs e)
+        {
+            Forms_DE_Best.RosenbrockForm rosenbrockForm = new Forms_DE_Best.RosenbrockForm();
+            rosenbrockForm.Show();
+        }
 
     }
 }

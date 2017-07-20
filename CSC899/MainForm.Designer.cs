@@ -118,24 +118,28 @@
             this.rastriginFunctionToolStripMenuItem1.Name = "rastriginFunctionToolStripMenuItem1";
             this.rastriginFunctionToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.rastriginFunctionToolStripMenuItem1.Text = "Rastrigin Function";
+            this.rastriginFunctionToolStripMenuItem1.Click += new System.EventHandler(this.RastriginForm_Load_Best);
             // 
             // ackleyFunctionToolStripMenuItem1
             // 
             this.ackleyFunctionToolStripMenuItem1.Name = "ackleyFunctionToolStripMenuItem1";
             this.ackleyFunctionToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.ackleyFunctionToolStripMenuItem1.Text = "Ackley Function";
+            this.ackleyFunctionToolStripMenuItem1.Click += new System.EventHandler(this.AckleyForm_Load_Best);
             // 
             // griewankFunctionToolStripMenuItem1
             // 
             this.griewankFunctionToolStripMenuItem1.Name = "griewankFunctionToolStripMenuItem1";
             this.griewankFunctionToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.griewankFunctionToolStripMenuItem1.Text = "Griewank Function";
+            this.griewankFunctionToolStripMenuItem1.Click += new System.EventHandler(this.GriewankForm_Load_Best);
             // 
             // rosenbrockFunctionToolStripMenuItem1
             // 
             this.rosenbrockFunctionToolStripMenuItem1.Name = "rosenbrockFunctionToolStripMenuItem1";
             this.rosenbrockFunctionToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.rosenbrockFunctionToolStripMenuItem1.Text = "Rosenbrock Function";
+            this.rosenbrockFunctionToolStripMenuItem1.Click += new System.EventHandler(this.RosenbrockForm_Load_Best);
             // 
             // squareToolStripMenuItem
             // 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Threading;
 using ProjectClassLibrary;
 
-namespace CSC899.Forms_DE_Rand
+namespace CSC899.Forms_DE_Best
 {
     public partial class RastriginForm : Form
     {
@@ -154,15 +154,16 @@ namespace CSC899.Forms_DE_Rand
 
             // Best solution found
             bestSolutionValue = popOfVectorFitness.Min();
+            bestVectorIndex = Addons.GetBestVectorIndex(popOfVectorFitness, bestSolutionValue);
             Console.WriteLine("Best Solution Found :" + bestSolutionValue);
 
             for (int i = 0; i < iterations; i++)
             {
 
-                // 2-- Mutation DE/Rand
+                // 2-- Mutation - DE/Best
                 // Apply mutation by Generating Trial Vectors
                 //Console.WriteLine("Generating Trial Vectors");
-                trialVectors = Operators.Mutation(popOfVectors, scalingFactor);
+                trialVectors = Operators.Mutation(popOfVectors, bestVectorIndex, scalingFactor);
 
                 //Print the trial vectors population to cmd
                 //Addons.PrintVectorsToCmd(trialVectors);

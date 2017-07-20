@@ -13,3 +13,7 @@ C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\bin\Debug\Pro
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand.AckleyForm.resources
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand.RosenbrockForm.resources
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand.GriewankForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Best.RastriginForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Best.AckleyForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Best.GriewankForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Best.RosenbrockForm.resources
