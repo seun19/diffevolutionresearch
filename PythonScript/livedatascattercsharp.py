@@ -7,7 +7,6 @@ style.use('fivethirtyeight')
 # Scale settings
 the_scale = open('csharpscale.txt' , 'r').read()
 sc = float(the_scale)
-
 fig = plt.figure()
 plt.axis([-sc,sc,-sc,sc])
 plt.xlabel("X Axis")
@@ -37,3 +36,5 @@ def animate(i):
     
 ani = animation.FuncAnimation(fig, animate, interval = 1000)
 plt.show()
+
+

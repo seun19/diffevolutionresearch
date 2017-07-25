@@ -355,7 +355,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GriewankForm";
-            this.Text = "Griewank Function";
+            this.Text = "Griewank Function - DE/Rand/";
             this.Load += new System.EventHandler(this.GriewankForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

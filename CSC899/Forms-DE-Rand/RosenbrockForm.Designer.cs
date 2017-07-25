@@ -355,7 +355,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "RosenbrockForm";
-            this.Text = "Rosenbrock Function";
+            this.Text = "Rosenbrock Function - DE/Rand/";
             this.Load += new System.EventHandler(this.RosenbrockForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -355,7 +355,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AckleyForm";
-            this.Text = "Ackley Function";
+            this.Text = "Ackley Function - DE/Best/";
             this.Load += new System.EventHandler(this.AckleyForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

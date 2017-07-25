@@ -355,7 +355,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "RastriginForm";
-            this.Text = "Rastrigin Function";
+            this.Text = "Rastrigin Function - DE/Best/";
             this.Load += new System.EventHandler(this.RastriginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

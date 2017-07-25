@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using CSC899.Forms_DE_Rand;
 using CSC899.Forms_DE_Best;
-
+using CSC899.Forms_DE_RandToBest;
 namespace CSC899
 {
     public partial class MainForm : Form
@@ -50,6 +50,14 @@ namespace CSC899
             rosenbrockForm.Show();
         }
 
+        private void SphereForm_Load(object sender, EventArgs e)
+        {
+            
+            Forms_DE_Rand.SphereForm sphereForm = new Forms_DE_Rand.SphereForm();
+            sphereForm.Show();
+        }
+
+
         // DE/Best Forms
         private void RastriginForm_Load_Best(object sender, EventArgs e)
         {
@@ -73,6 +81,44 @@ namespace CSC899
         {
             Forms_DE_Best.RosenbrockForm rosenbrockForm = new Forms_DE_Best.RosenbrockForm();
             rosenbrockForm.Show();
+        }
+
+        private void SphereForm_Load_Best(object sender, EventArgs e)
+        {
+            Forms_DE_Best.SphereForm sphereForm = new Forms_DE_Best.SphereForm();
+            sphereForm.Show();
+        }
+
+        // DE/RandToBest Forms
+        private void AckleyForm_Load_RandToBest(object sender, EventArgs e)
+        {
+            Forms_DE_RandToBest.AckleyForm ackleyForm = new Forms_DE_RandToBest.AckleyForm();
+            ackleyForm.Show();
+        }
+
+        private void RastriginForm_Load_RandToBest(object sender, EventArgs e)
+        {
+            Forms_DE_RandToBest.RastriginForm rastriginForm = new Forms_DE_RandToBest.RastriginForm();
+            rastriginForm.Show();
+        }
+
+        private void GriewankForm_Load_RandToBest(object sender, EventArgs e)
+        {
+            Forms_DE_RandToBest.GriewankForm griewankForm = new Forms_DE_RandToBest.GriewankForm();
+            griewankForm.Show();
+            
+        }
+
+        private void RosenbrockForm_Load_RandToBest(object sender, EventArgs e)
+        {
+            Forms_DE_RandToBest.RosenbrockForm rosenbrockForm = new Forms_DE_RandToBest.RosenbrockForm();
+            rosenbrockForm.Show();
+        }
+
+        private void SphereForm_Load_RandToBest(object sender, EventArgs e)
+        {
+            Forms_DE_RandToBest.SphereForm sphereForm = new Forms_DE_RandToBest.SphereForm();
+            sphereForm.Show();
         }
 
     }

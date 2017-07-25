@@ -51,14 +51,14 @@ namespace ProjectClassLibrary
             Random rand = new Random();
             // Generate First number
             randomInt[0] = rand.Next(0, intRange);
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             if (randomInt[0] == exclude)
             {
                 while (randomInt[0] == exclude) { randomInt[0] = rand.Next(0, intRange); }
             }
             // Second number
             randomInt[1] = rand.Next(0, intRange);
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             if (randomInt[1] == exclude || randomInt[1] == randomInt[0])
             {
                 while (randomInt[1] == exclude || randomInt[1] == randomInt[0]) { randomInt[1] = rand.Next(0, intRange); }
@@ -66,7 +66,7 @@ namespace ProjectClassLibrary
             
             // Third number
             randomInt[2] = rand.Next(0, intRange);
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             if (randomInt[2] == exclude || randomInt[2] == randomInt[0] || randomInt[2] == randomInt[1])
             {
                 while (randomInt[2] == exclude || randomInt[2] == randomInt[0] || randomInt[2] == randomInt[1]) { randomInt[2] = rand.Next(0, intRange); }
@@ -83,14 +83,14 @@ namespace ProjectClassLibrary
             Random rand = new Random();
             // Generate First number
             randomInt[0] = rand.Next(0, intRange);
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             if (randomInt[0] == exclude)
             {
                 while (randomInt[0] == exclude) { randomInt[0] = rand.Next(0, intRange); }
             }
             // Second number
             randomInt[1] = rand.Next(0, intRange);
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             if (randomInt[1] == exclude || randomInt[1] == randomInt[0])
             {
                 while (randomInt[1] == exclude || randomInt[1] == randomInt[0]) { randomInt[1] = rand.Next(0, intRange); }
@@ -131,7 +131,7 @@ namespace ProjectClassLibrary
                 {
                     randNum = rand.NextDouble();
                     population[p].valueAtPosition[k] = randNum;
-                    Thread.Sleep(10);
+                    //Thread.Sleep(10);
                     //System.Console.WriteLine(randNum);
                 }
 
@@ -160,18 +160,18 @@ namespace ProjectClassLibrary
                 for (int k = 0; k < dimension; k++)
                 {
                     lowerUpperBound = rand.NextDouble();
-                    Thread.Sleep(5);
+                    //Thread.Sleep(5);
                     if(lowerUpperBound <= 0.5)
                     {
                         randNum = rand.NextDouble() * lBound;
                         population[p].valueAtPosition[k] = randNum;
-                        Thread.Sleep(10);
+                        //Thread.Sleep(10);
                     }
                     else
                     {
                         randNum = rand.NextDouble() * uBound;
                         population[p].valueAtPosition[k] = randNum;
-                        Thread.Sleep(10);
+                        //Thread.Sleep(10);
                     }
                     
                     //System.Console.WriteLine(randNum);
@@ -301,7 +301,7 @@ namespace ProjectClassLibrary
             sw.WriteLine(upperBound);
                     
             sw.Close();
-            //Thread.Sleep(1000);
+            //Thread.Sleep(10);
 
         }// End PrintScaleToFile method
 

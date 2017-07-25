@@ -16,11 +16,11 @@ namespace CSC899.Forms_DE_Best
     public partial class RastriginForm : Form
     {
         // Declare variables to be supplied
-        int iterations = 100;
+        int iterations = 1000;
         int dim = 2;
         int popSize = 20;
-        double crossOverProbability = 0.6;
-        double scalingFactor = 0.3;
+        double crossOverProbability = 0.3;
+        double scalingFactor = 0.5;
 
         //Declare Variables lower and upper bound for rastrigin to be supplied
         double lowerBound = -5.12;
