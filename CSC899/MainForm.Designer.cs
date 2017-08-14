@@ -47,6 +47,18 @@
             this.griewankFunctionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.rosenbrockFunctionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sphereFunctionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.selfAdaptiveDERandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rastriginFunctionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ackleyFunctionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.griewankFunctionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rosenbrockFunctionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sphereFunctionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.selfAdaptiveModifiedDERandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rastriginFunctionToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ackleyFunctionToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.griewankFunctionToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rosenbrockFunctionToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sphereFunctionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +67,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.basicDEDERandToolStripMenuItem,
             this.basicDEDEBestToolStripMenuItem,
-            this.basicDEDERandToBestToolStripMenuItem});
+            this.basicDEDERandToBestToolStripMenuItem,
+            this.selfAdaptiveDERandToolStripMenuItem,
+            this.selfAdaptiveModifiedDERandToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(878, 24);
@@ -203,6 +217,100 @@
             this.sphereFunctionToolStripMenuItem1.Text = "Sphere Function";
             this.sphereFunctionToolStripMenuItem1.Click += new System.EventHandler(this.SphereForm_Load_RandToBest);
             // 
+            // selfAdaptiveDERandToolStripMenuItem
+            // 
+            this.selfAdaptiveDERandToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rastriginFunctionToolStripMenuItem3,
+            this.ackleyFunctionToolStripMenuItem3,
+            this.griewankFunctionToolStripMenuItem3,
+            this.rosenbrockFunctionToolStripMenuItem3,
+            this.sphereFunctionToolStripMenuItem2});
+            this.selfAdaptiveDERandToolStripMenuItem.Name = "selfAdaptiveDERandToolStripMenuItem";
+            this.selfAdaptiveDERandToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
+            this.selfAdaptiveDERandToolStripMenuItem.Text = "Self Adaptive - DE/Rand";
+            // 
+            // rastriginFunctionToolStripMenuItem3
+            // 
+            this.rastriginFunctionToolStripMenuItem3.Name = "rastriginFunctionToolStripMenuItem3";
+            this.rastriginFunctionToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.rastriginFunctionToolStripMenuItem3.Text = "Rastrigin Function";
+            this.rastriginFunctionToolStripMenuItem3.Click += new System.EventHandler(this.RastriginForm_Load_RandToBest_SA);
+            // 
+            // ackleyFunctionToolStripMenuItem3
+            // 
+            this.ackleyFunctionToolStripMenuItem3.Name = "ackleyFunctionToolStripMenuItem3";
+            this.ackleyFunctionToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.ackleyFunctionToolStripMenuItem3.Text = "Ackley Function";
+            this.ackleyFunctionToolStripMenuItem3.Click += new System.EventHandler(this.AckleyForm_Load_RandToBest_SA);
+            // 
+            // griewankFunctionToolStripMenuItem3
+            // 
+            this.griewankFunctionToolStripMenuItem3.Name = "griewankFunctionToolStripMenuItem3";
+            this.griewankFunctionToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.griewankFunctionToolStripMenuItem3.Text = "Griewank Function";
+            this.griewankFunctionToolStripMenuItem3.Click += new System.EventHandler(this.GriewankForm_Load_RandToBest_SA);
+            // 
+            // rosenbrockFunctionToolStripMenuItem3
+            // 
+            this.rosenbrockFunctionToolStripMenuItem3.Name = "rosenbrockFunctionToolStripMenuItem3";
+            this.rosenbrockFunctionToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.rosenbrockFunctionToolStripMenuItem3.Text = "Rosenbrock Function";
+            this.rosenbrockFunctionToolStripMenuItem3.Click += new System.EventHandler(this.RosenbrockForm_Load_RandToBest_SA);
+            // 
+            // sphereFunctionToolStripMenuItem2
+            // 
+            this.sphereFunctionToolStripMenuItem2.Name = "sphereFunctionToolStripMenuItem2";
+            this.sphereFunctionToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
+            this.sphereFunctionToolStripMenuItem2.Text = "Sphere Function";
+            this.sphereFunctionToolStripMenuItem2.Click += new System.EventHandler(this.SphereForm_Load_RandToBest_SA);
+            // 
+            // selfAdaptiveModifiedDERandToolStripMenuItem
+            // 
+            this.selfAdaptiveModifiedDERandToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rastriginFunctionToolStripMenuItem4,
+            this.ackleyFunctionToolStripMenuItem4,
+            this.griewankFunctionToolStripMenuItem4,
+            this.rosenbrockFunctionToolStripMenuItem4,
+            this.sphereFunctionToolStripMenuItem3});
+            this.selfAdaptiveModifiedDERandToolStripMenuItem.Name = "selfAdaptiveModifiedDERandToolStripMenuItem";
+            this.selfAdaptiveModifiedDERandToolStripMenuItem.Size = new System.Drawing.Size(193, 20);
+            this.selfAdaptiveModifiedDERandToolStripMenuItem.Text = "Self Adaptive Modified- DE/Rand";
+            // 
+            // rastriginFunctionToolStripMenuItem4
+            // 
+            this.rastriginFunctionToolStripMenuItem4.Name = "rastriginFunctionToolStripMenuItem4";
+            this.rastriginFunctionToolStripMenuItem4.Size = new System.Drawing.Size(186, 22);
+            this.rastriginFunctionToolStripMenuItem4.Text = "Rastrigin Function";
+            this.rastriginFunctionToolStripMenuItem4.Click += new System.EventHandler(this.RastriginForm_Load_RandToBest_SA_MO);
+            // 
+            // ackleyFunctionToolStripMenuItem4
+            // 
+            this.ackleyFunctionToolStripMenuItem4.Name = "ackleyFunctionToolStripMenuItem4";
+            this.ackleyFunctionToolStripMenuItem4.Size = new System.Drawing.Size(186, 22);
+            this.ackleyFunctionToolStripMenuItem4.Text = "Ackley Function";
+            this.ackleyFunctionToolStripMenuItem4.Click += new System.EventHandler(this.AckleyForm_Load_RandToBest_SA_MO);
+            // 
+            // griewankFunctionToolStripMenuItem4
+            // 
+            this.griewankFunctionToolStripMenuItem4.Name = "griewankFunctionToolStripMenuItem4";
+            this.griewankFunctionToolStripMenuItem4.Size = new System.Drawing.Size(186, 22);
+            this.griewankFunctionToolStripMenuItem4.Text = "Griewank Function";
+            this.griewankFunctionToolStripMenuItem4.Click += new System.EventHandler(this.GriewankForm_Load_RandToBest_SA_MO);
+            // 
+            // rosenbrockFunctionToolStripMenuItem4
+            // 
+            this.rosenbrockFunctionToolStripMenuItem4.Name = "rosenbrockFunctionToolStripMenuItem4";
+            this.rosenbrockFunctionToolStripMenuItem4.Size = new System.Drawing.Size(186, 22);
+            this.rosenbrockFunctionToolStripMenuItem4.Text = "Rosenbrock Function";
+            this.rosenbrockFunctionToolStripMenuItem4.Click += new System.EventHandler(this.RosenbrockForm_Load_RandToBest_SA_MO);
+            // 
+            // sphereFunctionToolStripMenuItem3
+            // 
+            this.sphereFunctionToolStripMenuItem3.Name = "sphereFunctionToolStripMenuItem3";
+            this.sphereFunctionToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.sphereFunctionToolStripMenuItem3.Text = "Sphere Function";
+            this.sphereFunctionToolStripMenuItem3.Click += new System.EventHandler(this.SphereForm_Load_RandToBest_SA_MO);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +349,19 @@
         private System.Windows.Forms.ToolStripMenuItem griewankFunctionToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem rosenbrockFunctionToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sphereFunctionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem selfAdaptiveDERandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rastriginFunctionToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ackleyFunctionToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem griewankFunctionToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem rosenbrockFunctionToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem sphereFunctionToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem selfAdaptiveModifiedDERandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rastriginFunctionToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem ackleyFunctionToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem griewankFunctionToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem rosenbrockFunctionToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem sphereFunctionToolStripMenuItem3;
     }
 }
 

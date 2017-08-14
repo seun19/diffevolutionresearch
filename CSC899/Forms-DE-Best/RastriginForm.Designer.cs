@@ -57,6 +57,9 @@
             this.btnResume = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNumOfRuns = new System.Windows.Forms.TextBox();
+            this.btnNumOfRuns = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -345,11 +348,40 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 214);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Number Of Runs";
+            // 
+            // txtNumOfRuns
+            // 
+            this.txtNumOfRuns.Location = new System.Drawing.Point(143, 207);
+            this.txtNumOfRuns.Name = "txtNumOfRuns";
+            this.txtNumOfRuns.Size = new System.Drawing.Size(100, 20);
+            this.txtNumOfRuns.TabIndex = 16;
+            // 
+            // btnNumOfRuns
+            // 
+            this.btnNumOfRuns.Location = new System.Drawing.Point(289, 205);
+            this.btnNumOfRuns.Name = "btnNumOfRuns";
+            this.btnNumOfRuns.Size = new System.Drawing.Size(113, 23);
+            this.btnNumOfRuns.TabIndex = 17;
+            this.btnNumOfRuns.Text = "Set Number Of Runs";
+            this.btnNumOfRuns.UseVisualStyleBackColor = true;
+            this.btnNumOfRuns.Click += new System.EventHandler(this.btnNumOfRuns_Click);
+            // 
             // RastriginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 494);
+            this.Controls.Add(this.btnNumOfRuns);
+            this.Controls.Add(this.txtNumOfRuns);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.groupBox2);
@@ -398,5 +430,8 @@
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnDimension;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtNumOfRuns;
+        private System.Windows.Forms.Button btnNumOfRuns;
     }
 }

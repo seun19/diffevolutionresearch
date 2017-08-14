@@ -24,3 +24,13 @@ C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand.SphereForm.resources
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Best.SphereForm.resources
 C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_RandToBest.SphereForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA.AckleyForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA.RastriginForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA.GriewankForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA.RosenbrockForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA.SphereForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA_MO.AckleyForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA_MO.GriewankForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA_MO.RastriginForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA_MO.RosenbrockForm.resources
+C:\Users\seuno\Documents\Visual Studio 2015\Projects\CSC899\CSC899\obj\Debug\CSC899.Forms_DE_Rand_SA_MO.SphereForm.resources

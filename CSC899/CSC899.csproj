@@ -52,6 +52,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms-DE-Rand-SA-MO\AckleyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\AckleyForm.Designer.cs">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\GriewankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\GriewankForm.Designer.cs">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\RastriginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\RastriginForm.Designer.cs">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\RosenbrockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\RosenbrockForm.Designer.cs">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\SphereForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA-MO\SphereForm.Designer.cs">
+      <DependentUpon>SphereForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\SphereForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\SphereForm.Designer.cs">
+      <DependentUpon>SphereForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\RosenbrockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\RosenbrockForm.Designer.cs">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\GriewankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\GriewankForm.Designer.cs">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\RastriginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\RastriginForm.Designer.cs">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\AckleyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-DE-Rand-SA\AckleyForm.Designer.cs">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms-DE-RandToBest\SphereForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +210,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms-DE-Rand-SA-MO\AckleyForm.resx">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA-MO\GriewankForm.resx">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA-MO\RastriginForm.resx">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA-MO\RosenbrockForm.resx">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA-MO\SphereForm.resx">
+      <DependentUpon>SphereForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA\SphereForm.resx">
+      <DependentUpon>SphereForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA\RosenbrockForm.resx">
+      <DependentUpon>RosenbrockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA\GriewankForm.resx">
+      <DependentUpon>GriewankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA\RastriginForm.resx">
+      <DependentUpon>RastriginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms-DE-Rand-SA\AckleyForm.resx">
+      <DependentUpon>AckleyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms-DE-RandToBest\SphereForm.resx">
       <DependentUpon>SphereForm.cs</DependentUpon>
     </EmbeddedResource>

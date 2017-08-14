@@ -99,6 +99,19 @@ namespace ProjectClassLibrary
             return randomInt;
         } // End 
 
+        public static double[] GenerateRandomDouble(int X) // Generate X random numbers between 0 and 1
+        {
+            Random rand = new Random();
+            double[] randNumber = new double[X];
+            
+            for (int i = 0; i < X; i++)
+            {
+                randNumber[i] = rand.NextDouble();
+                //Console.WriteLine(randNumber[i]);
+            }
+            return randNumber;
+        } // End method
+
         public static Vector ScaleVector(double scalingFactor, Vector vector)
         {
             int dim = vector.dimension;
@@ -297,7 +310,7 @@ namespace ProjectClassLibrary
 
             //Print the required scale to File  
             string fileLocation = "C:\\Users\\seuno\\Documents\\Visual Studio 2015\\Projects\\CSC899\\PythonScript\\csharpscale.txt";
-            StreamWriter sw = new StreamWriter(fileLocation, false);          
+            StreamWriter sw = new StreamWriter(fileLocation, false);       // over write existing   
             sw.WriteLine(upperBound);
                     
             sw.Close();
@@ -310,6 +323,20 @@ namespace ProjectClassLibrary
             foreach (double value in fitnessValue)
                 Console.WriteLine(value);
         }
+
+        public static void PrintObjectiveValueToFile(int numOfRuns ,double bestObjectiveValue)
+        {
+
+            //Print the required scale to File  
+            string fileLocation = "C:\\Users\\seuno\\Documents\\Visual Studio 2015\\Projects\\CSC899\\PythonScript\\valuetoreach.txt";
+            StreamWriter sw = new StreamWriter(fileLocation, true); // append i.e dont over write if 
+            sw.WriteLine(numOfRuns+", " + bestObjectiveValue);
+
+            sw.Close();
+            //Thread.Sleep(10);
+
+        }// End PrintScaleToFile method
+
 
         public static double GetScale(Vector[] vectorPopulation)
         {
@@ -341,6 +368,59 @@ namespace ProjectClassLibrary
             if(scaleValue < 1) { scaleValue = 2;  }
             return scaleValue;
         }// End Scale method
+
+        public static double[] ComputeScaleFactor(double[] scaleArray) // Self Adaptive - scaling factor
+        {
+            int popSize = scaleArray.Length;
+            double[] newScaleArray = new double[popSize];
+            Random random = new Random();
+            double randNum1;
+            double randNum2;
+            double Fl = 0.1; // the parameter introduced by Self adapting control parameters
+            double Fu = 0.9; // the parameter introduced by Self adapting control parameters
+            double tau1 = 0.3; // the parameter introduced by Self adapting control parameters
+            for(int i = 0; i < popSize; i++)
+            {
+                randNum1 = random.NextDouble();
+                randNum2 = random.NextDouble();
+                //Console.WriteLine("Random1 is " + randNum1 + " Random2 is " + randNum2);
+                if (randNum2 < tau1)
+                {
+                    newScaleArray[i] = Fl + randNum1 * Fu;
+                }
+                else
+                {
+                    newScaleArray[i] = scaleArray[i];
+                }
+
+            }//End for loop
+            return newScaleArray;
+        }
+
+        public static double[] ComputeCRProbability(double[] crArray) // Self Adaptive - crossover probability
+        {
+            int popSize = crArray.Length;
+            double[] newCrArray = new double[popSize];
+            Random random = new Random();
+            double randNum3; // the parameter introduced by Self adapting control parameters
+            double randNum4; // the parameter introduced by Self adapting control parameters
+            double tau2 = 0.3; // the parameter introduced by Self adapting control parameters
+            for (int i = 0; i < popSize; i++)
+            {
+                randNum3 = random.NextDouble();
+                randNum4 = random.NextDouble();
+                if (randNum4 < tau2)
+                {
+                    newCrArray[i] = randNum3;
+                }
+                else
+                {
+                    newCrArray[i] = crArray[i];
+                }
+
+            }//End for loop
+            return newCrArray;
+        }
 
     }// End Class
 

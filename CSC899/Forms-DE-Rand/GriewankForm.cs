@@ -16,6 +16,7 @@ namespace CSC899.Forms_DE_Rand
     public partial class GriewankForm : Form
     {
         // Declare variables to be supplied
+        int numberOfRuns = 1;
         int iterations = 1000;
         int dim = 2;
         int popSize = 20;
@@ -45,7 +46,7 @@ namespace CSC899.Forms_DE_Rand
             txtPopulationSize.Text = Convert.ToString(popSize);
             txtLowerBound.Text = Convert.ToString(lowerBound);
             txtUpperBound.Text = Convert.ToString(upperBound);
-
+            txtNumOfRuns.Text = Convert.ToString(numberOfRuns);
             //Changeable Variables
             txtScalingFactor.Text = Convert.ToString(scalingFactor);
             txtCrossOver.Text = Convert.ToString(crossOverProbability);
@@ -121,6 +122,12 @@ namespace CSC899.Forms_DE_Rand
             scalingFactor = Convert.ToDouble(txtScalingFactor.Text);
         }
 
+        private void btnNumOfRuns_Click(object sender, EventArgs e)
+        {
+            numberOfRuns = Convert.ToInt32(txtNumOfRuns.Text);
+        }
+
+
         //Method
         //Method to run as Thread
         public void TestGriewank()
@@ -143,79 +150,92 @@ namespace CSC899.Forms_DE_Rand
             //Write Scale to file if necessary-----------------------------------
             Addons.PrintScaleToFile(upperBound);
 
-            //  1--Initial Population Generation
-            // Generate initial population of vectors
-            Console.WriteLine("Generating Initial Population");
-            popOfVectors = Addons.GeneratePopulation(dim, popSize, lowerBound, upperBound);
-
-            //Print the initial population of vectors to cmd
-            Addons.PrintVectorsToCmd(popOfVectors);
-
-            // 1.1-- Check fitness of population
-            popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Griewank");
-            // Print fitness
-            Addons.PrintFitnessToCmd(popOfVectorFitness);
-
-            // Best solution found
-            bestSolutionValue = popOfVectorFitness.Min();
-            Console.WriteLine("Best Solution Found :" + bestSolutionValue);
-
-            for (int i = 0; i < iterations; i++)
+            //number of runs
+            int runs = 1;
+            while (runs <= numberOfRuns)
             {
 
-                // 2-- Mutation
-                // Apply mutation by Generating Trial Vectors
-                //Console.WriteLine("Generating Trial Vectors");
-                trialVectors = Operators.Mutation(popOfVectors, scalingFactor);
+                //  1--Initial Population Generation
+                // Generate initial population of vectors
+                Console.WriteLine("Generating Initial Population");
+                popOfVectors = Addons.GeneratePopulation(dim, popSize, lowerBound, upperBound);
 
-                //Print the trial vectors population to cmd
-                //Addons.PrintVectorsToCmd(trialVectors);
+                //Print the initial population of vectors to cmd
+                Addons.PrintVectorsToCmd(popOfVectors);
 
-                // 3-- CrossOver
-                // Apply cross over using the initial population and the trial vector
-                //Console.WriteLine("Generating Crossed Vectors");
-                crossedVectors = Operators.CrossOver(popOfVectors, trialVectors, dim, crossOverProbability);
-
-                //Print the Crossed vectors population to cmd
-                //Addons.PrintVectorsToCmd(crossedVectors);
-
-                // 3.1-- Check fitness of population
-                crossedVectorFitness = Addons.CalculateFitness(crossedVectors, "Griewank");
-                // Print fitness
-                //Addons.PrintFitnessToCmd(crossedVectorFitness);
-
-                // 4-- Selection
-                // Apply selection for vectors that will move to next generation
-                selectedVectors = Operators.SelectionForNextGenation(popOfVectors, crossedVectors, popOfVectorFitness, crossedVectorFitness);
-
-                //Print Selected Values
-                //Console.WriteLine("Selected Values for next Generation");
-                //Addons.PrintVectorsToCmd(selectedVectors);
-
-                //5-- Copy selected vectors into initial vector population
-                //Console.WriteLine("Generating Replaced Initial Population");
-                selectedVectors.CopyTo(popOfVectors, 0);
-                //Addon.GetScale Get new scale based on solution found
-                newScale = Addons.GetScale(popOfVectors);
-                //Addon Print scale to file
-                Addons.PrintScaleToFile(newScale);
-                //Addons.PrintVectorsToCmd(popOfVectors);
-                Addons.PrintVectorsToFile(popOfVectors);
-
-                //5.1-- Get fitness of New population of vectors(the new population)
+                // 1.1-- Check fitness of population
                 popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Griewank");
+                // Print fitness
+                Addons.PrintFitnessToCmd(popOfVectorFitness);
 
-                //5.2-- Get Best solution found
+                // Best solution found
                 bestSolutionValue = popOfVectorFitness.Min();
-                bestVectorIndex = Addons.GetBestVectorIndex(popOfVectorFitness, bestSolutionValue);
-                Console.WriteLine("Iteration" + i + "  Best Vector Index=" + bestVectorIndex + "   Best Solution Found :" + bestSolutionValue);
+                Console.WriteLine("Best Solution Found :" + bestSolutionValue);
 
-            }// End for loop
+                for (int i = 0; i < iterations; i++)
+                {
 
-            //Print all fitness values
-            Console.WriteLine("\n\n Printing all Fitness Value when done");
-            Addons.PrintVectorsToCmd(popOfVectors);
-            Addons.PrintFitnessToCmd(popOfVectorFitness);
+                    // 2-- Mutation
+                    // Apply mutation by Generating Trial Vectors
+                    //Console.WriteLine("Generating Trial Vectors");
+                    trialVectors = Operators.Mutation(popOfVectors, scalingFactor);
+
+                    //Print the trial vectors population to cmd
+                    //Addons.PrintVectorsToCmd(trialVectors);
+
+                    // 3-- CrossOver
+                    // Apply cross over using the initial population and the trial vector
+                    //Console.WriteLine("Generating Crossed Vectors");
+                    crossedVectors = Operators.CrossOver(popOfVectors, trialVectors, dim, crossOverProbability);
+
+                    //Print the Crossed vectors population to cmd
+                    //Addons.PrintVectorsToCmd(crossedVectors);
+
+                    // 3.1-- Check fitness of population
+                    crossedVectorFitness = Addons.CalculateFitness(crossedVectors, "Griewank");
+                    // Print fitness
+                    //Addons.PrintFitnessToCmd(crossedVectorFitness);
+
+                    // 4-- Selection
+                    // Apply selection for vectors that will move to next generation
+                    selectedVectors = Operators.SelectionForNextGenation(popOfVectors, crossedVectors, popOfVectorFitness, crossedVectorFitness);
+
+                    //Print Selected Values
+                    //Console.WriteLine("Selected Values for next Generation");
+                    //Addons.PrintVectorsToCmd(selectedVectors);
+
+                    //5-- Copy selected vectors into initial vector population
+                    //Console.WriteLine("Generating Replaced Initial Population");
+                    selectedVectors.CopyTo(popOfVectors, 0);
+                    //Addon.GetScale Get new scale based on solution found
+                    newScale = Addons.GetScale(popOfVectors);
+                    //Addon Print scale to file
+                    Addons.PrintScaleToFile(newScale);
+                    //Addons.PrintVectorsToCmd(popOfVectors);
+                    Addons.PrintVectorsToFile(popOfVectors);
+
+                    //5.1-- Get fitness of New population of vectors(the new population)
+                    popOfVectorFitness = Addons.CalculateFitness(popOfVectors, "Griewank");
+
+                    //5.2-- Get Best solution found
+                    bestSolutionValue = popOfVectorFitness.Min();
+                    bestVectorIndex = Addons.GetBestVectorIndex(popOfVectorFitness, bestSolutionValue);
+                    Console.WriteLine("Iteration" + i + "  Best Vector Index=" + bestVectorIndex + "   Best Solution Found :" + bestSolutionValue);
+
+                }// End for loop
+
+                //Print all fitness values
+                Console.WriteLine("\n\n Printing all Fitness Value when done");
+                Addons.PrintVectorsToCmd(popOfVectors);
+                Addons.PrintFitnessToCmd(popOfVectorFitness);
+
+                //Printing best values to text file
+                Addons.PrintObjectiveValueToFile(runs, bestSolutionValue);
+                runs++; // increment the number of runs
+
+            }// End While
+
+            
         }// End Method
 
         

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using CSC899.Forms_DE_Rand;
 using CSC899.Forms_DE_Best;
 using CSC899.Forms_DE_RandToBest;
+using CSC899.Forms_DE_Rand_SA;
 namespace CSC899
 {
     public partial class MainForm : Form
@@ -118,6 +119,68 @@ namespace CSC899
         private void SphereForm_Load_RandToBest(object sender, EventArgs e)
         {
             Forms_DE_RandToBest.SphereForm sphereForm = new Forms_DE_RandToBest.SphereForm();
+            sphereForm.Show();
+        }
+
+        // Self Adaptive DE/RandToBest Forms
+        private void AckleyForm_Load_RandToBest_SA(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA.AckleyForm ackleyForm = new Forms_DE_Rand_SA.AckleyForm();
+            ackleyForm.Show();
+        }
+
+        private void RastriginForm_Load_RandToBest_SA(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA.RastriginForm rastriginForm = new Forms_DE_Rand_SA.RastriginForm();
+            rastriginForm.Show();
+        }
+
+        private void GriewankForm_Load_RandToBest_SA(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA.GriewankForm griewankForm = new Forms_DE_Rand_SA.GriewankForm();
+            griewankForm.Show();
+        }
+
+        private void RosenbrockForm_Load_RandToBest_SA(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA.RosenbrockForm rosenbrockForm = new Forms_DE_Rand_SA.RosenbrockForm();
+            rosenbrockForm.Show();
+        }
+
+        private void SphereForm_Load_RandToBest_SA(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA.SphereForm sphereForm = new Forms_DE_Rand_SA.SphereForm();
+            sphereForm.Show();
+        }
+
+        // Self Adaptive DE/RandToBest Forms Modified
+        private void AckleyForm_Load_RandToBest_SA_MO(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA_MO.AckleyForm ackleyForm = new Forms_DE_Rand_SA_MO.AckleyForm();
+            ackleyForm.Show();
+        }
+
+        private void RastriginForm_Load_RandToBest_SA_MO(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA_MO.RastriginForm rastriginForm = new Forms_DE_Rand_SA_MO.RastriginForm();
+            rastriginForm.Show();
+        }
+
+        private void GriewankForm_Load_RandToBest_SA_MO(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA_MO.GriewankForm griewankForm = new Forms_DE_Rand_SA_MO.GriewankForm();
+            griewankForm.Show();
+        }
+
+        private void RosenbrockForm_Load_RandToBest_SA_MO(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA_MO.RosenbrockForm rosenbrockForm = new Forms_DE_Rand_SA_MO.RosenbrockForm();
+            rosenbrockForm.Show();
+        }
+
+        private void SphereForm_Load_RandToBest_SA_MO(object sender, EventArgs e)
+        {
+            Forms_DE_Rand_SA_MO.SphereForm sphereForm = new Forms_DE_Rand_SA_MO.SphereForm();
             sphereForm.Show();
         }
 

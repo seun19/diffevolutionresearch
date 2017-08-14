@@ -16,6 +16,7 @@ namespace CSC899.Forms_DE_Best
     public partial class RastriginForm : Form
     {
         // Declare variables to be supplied
+        int numberOfRuns = 1;
         int iterations = 1000;
         int dim = 2;
         int popSize = 20;
@@ -45,7 +46,7 @@ namespace CSC899.Forms_DE_Best
             txtPopulationSize.Text = Convert.ToString(popSize);
             txtLowerBound.Text = Convert.ToString(lowerBound);
             txtUpperBound.Text = Convert.ToString(upperBound);
-
+            txtNumOfRuns.Text = Convert.ToString(numberOfRuns);
             //Changeable Variables
             txtScalingFactor.Text = Convert.ToString(scalingFactor);
             txtCrossOver.Text = Convert.ToString(crossOverProbability);
@@ -117,6 +118,12 @@ namespace CSC899.Forms_DE_Best
             scalingFactor = Convert.ToDouble(txtScalingFactor.Text);
         }
 
+        private void btnNumOfRuns_Click(object sender, EventArgs e)
+        {
+            numberOfRuns = Convert.ToInt32(txtNumOfRuns.Text);
+        }
+
+
         //Method
         //Method to run as Thread
         public void TestRastrigin()
@@ -139,7 +146,11 @@ namespace CSC899.Forms_DE_Best
             //Addon Write Scale to file if necessary-----------------------------------
             Addons.PrintScaleToFile(upperBound);
 
-            //  1--Initial Population Generation
+            //number of runs
+            int runs = 1;
+            while (runs <= numberOfRuns)
+            {
+                //  1--Initial Population Generation
             // Generate initial population of vectors
             Console.WriteLine("Generating Initial Population");
             popOfVectors = Addons.GeneratePopulation(dim, popSize, lowerBound, upperBound);
@@ -208,12 +219,24 @@ namespace CSC899.Forms_DE_Best
                 bestVectorIndex = Addons.GetBestVectorIndex(popOfVectorFitness, bestSolutionValue);
                 Console.WriteLine("Iteration" + i + "  Best Vector Index=" + bestVectorIndex + "   Best Solution Found :" + bestSolutionValue);
 
-            }// End for loop
+                //Printing to file - Comment out later
+                Addons.PrintObjectiveValueToFile(i, bestSolutionValue);
+
+                }// End for loop
 
             //Print all fitness values
             Console.WriteLine("\n\n Printing all Fitness Value when done");
             Addons.PrintVectorsToCmd(popOfVectors);
             Addons.PrintFitnessToCmd(popOfVectorFitness);
+            
+            //Printing best values to text file
+            //Addons.PrintObjectiveValueToFile(runs, bestSolutionValue);
+            runs++; // increment the number of runs
+
+            }// End while
+
+
+            
         }// End Method
 
         
