@@ -134,13 +134,13 @@ namespace CSC899.Forms_DE_Best
 
             // Declare Variables - Arrays to keep vector population
             Vector[] popOfVectors;  //population of vectors
-            Vector[] trialVectors;  //trial vectors
-            Vector[] crossedVectors;  // crossed vectors for next generation based on fitness
+            Vector[] mutantVectors;  //trial vectors
+            Vector[] trialVectors;  // crossed vectors for next generation based on fitness
             Vector[] selectedVectors; // selected vectors for next generation
 
             // Declare Variables to store fitness
             double[] popOfVectorFitness;
-            double[] crossedVectorFitness = new double[popSize];
+            double[] trialVectorFitness = new double[popSize];
 
             //Write Scale to file if necessary-----------------------------------
             Addons.PrintScaleToFile(upperBound);
@@ -173,27 +173,27 @@ namespace CSC899.Forms_DE_Best
                     // 2-- Mutation DE/Best
                     // Apply mutation by Generating Trial Vectors
                     //Console.WriteLine("Generating Trial Vectors");
-                    trialVectors = Operators.Mutation(popOfVectors, bestVectorIndex, scalingFactor);
+                    mutantVectors = Operators.Mutation(popOfVectors, bestVectorIndex, scalingFactor);
 
                     //Print the trial vectors population to cmd
-                    //Addons.PrintVectorsToCmd(trialVectors);
+                    //Addons.PrintVectorsToCmd(mutantVectors);
 
                     // 3-- CrossOver
                     // Apply cross over using the initial population and the trial vector
                     //Console.WriteLine("Generating Crossed Vectors");
-                    crossedVectors = Operators.CrossOver(popOfVectors, trialVectors, dim, crossOverProbability);
+                    trialVectors = Operators.CrossOver(popOfVectors, mutantVectors, dim, crossOverProbability);
 
                     //Print the Crossed vectors population to cmd
-                    //Addons.PrintVectorsToCmd(crossedVectors);
+                    //Addons.PrintVectorsToCmd(trialVectors);
 
                     // 3.1-- Check fitness of population
-                    crossedVectorFitness = Addons.CalculateFitness(crossedVectors, "Rosenbrock");
+                    trialVectorFitness = Addons.CalculateFitness(trialVectors, "Rosenbrock");
                     // Print fitness
-                    //Addons.PrintFitnessToCmd(crossedVectorFitness);
+                    //Addons.PrintFitnessToCmd(trialVectorFitness);
 
                     // 4-- Selection
                     // Apply selection for vectors that will move to next generation
-                    selectedVectors = Operators.SelectionForNextGenation(popOfVectors, crossedVectors, popOfVectorFitness, crossedVectorFitness);
+                    selectedVectors = Operators.SelectionForNextGenation(popOfVectors, trialVectors, popOfVectorFitness, trialVectorFitness);
 
                     //Print Selected Values
                     //Console.WriteLine("Selected Values for next Generation");
